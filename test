@@ -7,5 +7,22 @@ pipeline {
                 echo 'Hello world!'
                 }
             }
-         }
+            
+        stage('Build 1') {
+            steps {
+                build 'HuongPhan'
+                }
+            } 
+            
+        stage('Build 2') {
+            steps {
+                build 'j1'
+                }
+            }  
+        stage('Build 3') {
+            steps {
+                build 'test1'
+                }
+            } 
+        }
     }   
