@@ -37,7 +37,8 @@ pipeline {
         //         }
         //     }    
         // }
-
+        }
+        
         post{
             success{
                 mail to: "testpaypal594@gmail.com", subject: "Success", body: "This build ran successfully."
