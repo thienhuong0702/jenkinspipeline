@@ -10,7 +10,7 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello world!'
-                echo "Running ${env.BUILD_DISPLAY_NAME} on  ${env.BUILD_NUMBER} with ${env.BRANCH_NAME}"
+                echo "Running ${env.BUILD_DISPLAY_NAME} on  ${env.BUILD_NUMBER}"
                 }
             }
             
@@ -36,5 +36,15 @@ pipeline {
                 echo "Goodbye ${params.Username}!"
                 }
             }    
+        }
+
+        post{
+            success{
+                mail to: "testpaypal594@gmail.com", subject: "Success", body: "This build ran successfully."
+            }
+
+            failure{
+                mail to: "testpaypal594@gmail.com", subject: "Build failed", body: "This build ran failed. Please check it!"
+            }
         }
     }   
