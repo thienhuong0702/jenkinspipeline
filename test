@@ -5,24 +5,10 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello world!'
+                sh "printenv"
                 }
             }
             
-        stage('Build 1') {
-            steps {
-                build 'HuongPhan'
-                }
-            } 
-            
-        stage('Build 2') {
-            steps {
-                build 'j1'
-                }
-            }  
-        stage('Build 3') {
-            steps {
-                build 'test1'
-                }
-            } 
+        
         }
     }   
