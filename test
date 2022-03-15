@@ -14,22 +14,22 @@ pipeline {
                 }
             }
             
-        stage('Build 1') {
-            steps {
-                build 'HuongPhan'
-                }
-            } 
+        // stage('Build 1') {
+        //     steps {
+        //         build 'HuongPhan'
+        //         }
+        //     } 
             
-        stage('Build 2') {
-            steps {
-                build 'j1'
-                }
-            }  
-        stage('Build 3') {
-            steps {
-                build 'test1'
-                }
-            } 
+        // stage('Build 2') {
+        //     steps {
+        //         build 'j1'
+        //         }
+        //     }  
+        // stage('Build 3') {
+        //     steps {
+        //         build 'test1'
+        //         }
+        //     } 
             
         stage('The end') {
             steps {
