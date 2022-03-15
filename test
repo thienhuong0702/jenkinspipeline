@@ -4,42 +4,42 @@ pipeline {
         string(name: 'Greeting', defaultValue: 'Hello');
         string(name: 'Ending', defaultValue: 'Good bye');
         string(name: 'Username', defaultValue: 'HuongPhan')
-        }
+    }
     
     stages {
         stage('Hello') {
             steps {
                 echo 'Hello world!'
-                echo "Running ${env.BUILD_DISPLAY_NAME} on  ${env.BUILD_NUMBER}"
+                echo "Running ${env.JOB_NAME} on branch ${env.BRANCH_NAME}"
                 }
             }
             
-        // stage('Build 1') {
-        //     steps {
-        //         build 'HuongPhan'
-        //         }
-        //     } 
+        stage('Build 1') {
+            steps {
+                build 'HuongPhan'
+                }
+            } 
             
-        // stage('Build 2') {
-        //     steps {
-        //         build 'j1'
-        //         }
-        //     }  
-        // stage('Build 3') {
-        //     steps {
-        //         build 'test1'
-        //         }
-        //     } 
+        stage('Build 2') {
+            steps {
+                build 'j1'
+                }
+            }  
+        stage('Build 3') {
+            steps {
+                build 'test12'
+                }
+            } 
             
-        // stage('The end') {
-        //     steps {
-        //         echo "Goodbye ${params.Username}!"
-        //         }
-        //     }    
-        // }
-        }
-        
-        post{
+        stage('The end') {
+            steps {
+                echo "Goodbye ${params.Username}!"
+                }
+            }    
+        }  
+    }  
+
+    post{
             success{
                 mail to: "testpaypal594@gmail.com", subject: "Success", body: "This build ran successfully."
             }
@@ -47,5 +47,5 @@ pipeline {
             failure{
                 mail to: "testpaypal594@gmail.com", subject: "Build failed", body: "This build ran failed. Please check it!"
             }
-        }
-    }   
+    }
+} 
