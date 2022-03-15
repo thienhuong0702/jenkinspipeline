@@ -4,14 +4,8 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                echo 'Hello 123'
+                echo 'Hello world!'
                 }
             }
-            
-        stage('Build job') {
-            steps {
-                build 'HuongPhan'
-                }
-            }
-        }
+         
     }   
