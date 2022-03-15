@@ -1,9 +1,9 @@
 pipeline {
     agent any
     parameters {
-        string(name: 'Greeting', default: 'Hello');
-        string(name: 'Ending', default: 'Good bye');
-        string(name: 'Username', default: 'HuongPhan')
+        string(name: 'Greeting', defaultValue: 'Hello');
+        string(name: 'Ending', defaultValue: 'Good bye');
+        string(name: 'Username', defaultValue: 'HuongPhan')
         }
     
     stages {
