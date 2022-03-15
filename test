@@ -1,8 +1,8 @@
 pipeline {
     agent any
     parameters {
-        string(name: 'Greeting', default: 'Hello'),
-        string(name: 'Ending', default: 'Good bye'),
+        string(name: 'Greeting', default: 'Hello');
+        string(name: 'Ending', default: 'Good bye');
         string(name: 'Username', default: 'HuongPhan')
         }
     
