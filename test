@@ -1,14 +1,40 @@
 pipeline {
     agent any
+    parameters {
+        string(name: 'Greeting', default: 'Hello')
+        string(name: 'Ending', default: "Good bye')
+        string(name: 'Username', default: 'HuongPhan')
+        }
     
     stages {
         stage('Hello') {
             steps {
                 echo 'Hello world!'
-                sh "printenv"
+                echo "Running ${env.BUILD_DISPLAY_NAME} on  ${env.BUILD_NUMBER} / ${env.BRANCH_NAME}
                 }
             }
             
-        
+        stage('Build 1') {
+            steps {
+                build 'HuongPhan'
+                }
+            } 
+            
+        stage('Build 2') {
+            steps {
+                build 'j1'
+                }
+            }  
+        stage('Build 3') {
+            steps {
+                build 'test1'
+                }
+            } 
+            
+        stage('The end') {
+            steps {
+                echo "Goodbye ${params.Username}!"
+                }
+            }    
         }
     }   
