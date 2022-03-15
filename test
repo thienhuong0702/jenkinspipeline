@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                echo 'Hello world!'
+                echo 'Hello world 123!'
                 echo "Running ${env.JOB_NAME} on branch ${env.BRANCH_NAME}"
                 }
             }
