@@ -27,7 +27,7 @@ pipeline {
             }  
         stage('Build 3') {
             steps {
-                build 'test12'
+                build 'test1'
                 }
             } 
             
